@@ -534,10 +534,6 @@ li {
     cursor: url(img/core-img/next.png), auto !important;
 }
 
-/* --------------------
-:: 5.0 Top Feature Area CSS 
--------------------- */
-
 .categories_area {
     padding: 80px 0 50px 0;
 }
@@ -585,7 +581,7 @@ li {
 .post-thumb img {
     border-radius: 30px;
     margin-bottom: 30px;
-    border-top: 1px solid #ebebeb;
+/*    border-top: 1px solid #ebebeb;*/
 }
 
 .post-meta {
