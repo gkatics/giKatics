@@ -1,0 +1,724 @@
+/* Giselle Katics V2.0 CSS */
+
+:root {
+    --background: #ffffff;
+    --surface: #fafafa;
+    --text: #171717;
+    --muted: #666666;
+    --border: #e8e8e8;
+    --accent: #0a66ff;
+    --accent-dark: #0048c2;
+    --content-width: 760px;
+    --wide-width: 1100px;
+    --space-1: .5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
+    --space-4: 3rem;
+    --space-5: 5rem;
+    --space-6: 8rem;
+    --radius: 16px;
+}
+
+/* ===== RESET ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    line-height: 1.7;
+
+    font-size: 18px;
+
+    text-rendering: optimizeLegibility;
+
+}
+
+
+/* ==========================================================
+   IMAGES
+========================================================== */
+
+img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+/* LINKS*/
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+
+/* ==== TYPOGRAPHY ==== */
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    max-width: 16ch;
+    margin-bottom: var(--space-3);
+}
+
+h2 {
+    font-size: 0.8rem;
+    margin-bottom: 1.rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+
+p {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+}
+
+small {
+    color: var(--muted);
+}
+
+/* LAYOUT */
+
+.container {
+    width: min(var(--content-width), calc(100% - 2rem));
+    margin-inline: auto;
+}
+
+.section {
+    padding: var(--space-6) 0;
+}
+
+.section + .section {
+    border-top: 1px solid var(--border);
+}
+
+
+/*  HEADER*/
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 72px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -.02em;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: .95rem;
+    color: var(--muted);
+
+}
+
+nav a:hover {
+    color: var(--text);
+}
+
+.site-header nav a {
+    position: relative;
+}
+
+.site-header nav a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 7rem;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.intro {
+    max-width: 650px;
+    font-size: 1rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .2rem 1.4rem;
+
+    border-radius: 700px;
+
+    border: 1px solid var(--border);
+
+    transition: .25s;
+
+}
+
+.button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.button.primary {
+
+    background: var(--text);
+
+    color: white;
+
+    border: none;
+
+}
+
+.button.primary:hover {
+
+    background: var(--accent);
+
+}
+
+
+/* ===== SECTION HEADER ==== */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header a {
+    color: var(--muted);
+    font-size: .95rem;
+}
+
+
+/* ===== FEATURE ARTICLE ===== */
+
+.feature {
+    max-width: 680px;
+}
+
+.feature h3 {
+    font-size: 2rem;
+    margin: .5rem 0 1rem;
+}
+
+.feature p {
+    font-size: 1.1rem;
+}
+
+/* ARTICLE PAGE */
+
+.page-intro {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.page-description {
+    max-width: 620px;
+    font-size: 1.2rem;
+}
+
+/* Featured article */
+.article-feature {
+    max-width: 700px;
+}
+
+.article-feature h2 {
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    margin: .75rem 0 1rem;
+}
+
+.article-feature p {
+    font-size: 1.15rem;
+    max-width: 650px;
+}
+
+
+/* Article list */
+
+.article-list {
+    border-top: 1px solid var(--border);
+}
+
+.article-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.article-item-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: .75rem;
+    color: var(--muted);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.article-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: .75rem;
+}
+
+.article-item p {
+    max-width: 650px;
+    margin-bottom: 1rem;
+}
+
+.article-source {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Article image */
+
+.article-feature-image {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.article-feature-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.article-feature-image:hover img {
+    transform: scale(1.02);
+}
+
+/* ==========================================================
+   NOTES
+========================================================== */
+
+.note {
+
+    padding: 1.8rem 0;
+
+    border-top: 1px solid var(--border);
+
+}
+
+.note:first-of-type {
+
+    border-top: none;
+
+}
+
+
+/* ====== META ====== */
+.meta {
+    display: inline-block;
+    color: var(--muted);
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+
+/* ===== PROJECTS ====== */
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 2rem;
+}
+
+.project-list article {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: .2s;
+}
+
+.project-list article:hover {
+    transform: translateY(-4px);
+    border-color: #d6d6d6;
+}
+
+.project-list h3 {
+    margin-bottom: 1rem;
+}
+
+
+
+/* ====== TEXT LINKS ===== */
+
+.text-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.text-link:hover {
+    color: var(--accent-dark);
+}
+
+/* ====== PROJECT GALLERY======= */
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+}
+
+.project-gallery-item {
+    min-width: 0;
+}
+
+.project-gallery-image {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--surface);
+}
+
+.project-gallery-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Height is twice the width */
+    aspect-ratio: 1 / 2;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.project-gallery-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.project-gallery-item > a:hover .project-gallery-image img {
+    transform: scale(1.03);
+}
+
+.project-gallery-item--double {
+    grid-column: span 2;
+}
+
+.project-gallery-info {
+    padding-top: 1rem;
+}
+
+.project-gallery-meta {
+    margin-bottom: .4rem;
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.project-gallery-info h2 {
+    margin: 0 0 .5rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+.project-gallery-info p {
+    margin: 0;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.project-closing {
+    max-width: 650px;
+}
+
+.project-closing h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+/*PROJECT FEATURE*/
+
+.project-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: 3rem;
+    align-items: start;
+}
+
+.project-content {
+    max-width: 520px;
+}
+
+
+/* Project image */
+
+.project-content > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 1.25rem;
+}
+
+.project-title {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    margin-bottom: 0.35rem;
+}
+
+.project-meta {
+    font-size: 0.2rem;
+    line-height: 1.0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .project-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem 1.25rem;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+    margin-top: var(--space-6);
+    padding: 1rem 0;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+.footer-links a {
+    color: var(--muted);
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection {
+    background: #dbe8ff;
+}
+
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+@media (prefers-color-scheme: dark) {
+
+:root {
+
+    --background:#101010;
+
+    --surface:#181818;
+
+    --text:#f5f5f5;
+
+    --muted:#b8b8b8;
+
+    --border:#2b2b2b;
+
+}
+
+.site-header {
+
+    background: rgba(16,16,16,.88);
+
+}
+
+.button.primary {
+
+    background: white;
+
+    color: black;
+
+}
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 720px) {
+
+body {
+
+    font-size: 17px;
+
+}
+
+.site-header .container {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 1rem 0;
+
+}
+
+nav {
+
+    margin-top: 1rem;
+
+    gap: 1rem;
+
+}
+
+.hero {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+}
+
+.hero-actions {
+
+    flex-direction: column;
+
+}
+
+.section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+
+}
+
+.project-list {
+    grid-template-columns: 1fr;
+
+}
+
+}
